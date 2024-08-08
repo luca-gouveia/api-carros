@@ -47,6 +47,17 @@ public class VeiculoController {
         return new ResponseEntity<>(veiculos, HttpStatus.OK);
     }
 
+    @Operation(summary = "Recupera veículo por ID", method = "GET")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Recupera com sucesso"),
+            @ApiResponse(responseCode = "500", description = "Erro ao realizar a busca"),
+    })
+    @GetMapping ("/{id}")
+    public ResponseEntity<VeiculoDTO> getVeiculo(@PathVariable("id") Long id) {
+        var veiculo = veiculoService.getVeiculo(id);
+        return new ResponseEntity<>(veiculo, HttpStatus.OK);
+    }
+
     @Operation(summary = "Salvar veículo", method = "POST")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Salvo com sucesso"),

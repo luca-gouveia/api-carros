@@ -36,6 +36,16 @@ public class VeiculoService {
         );
     }
 
+    public VeiculoDTO getVeiculo(Long id) {
+        var veiculo = veiculoRepository.findById(id);
+
+        if (veiculo.isEmpty()) {
+            throw new RuntimeException("Não foi possível recuperar - ID");
+        }
+
+        return new VeiculoDTO(veiculo.get());
+    }
+
     private List<VeiculoDTO> converterLista(List<Veiculo> itens) {
         var itensListaDTO = new ArrayList<VeiculoDTO>();
 
