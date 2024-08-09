@@ -9,6 +9,7 @@ import lombok.Setter;
 public class VeiculoDTO {
     private Long id;
     private String marca;
+    private String sigla;
     private String descricao;
     private Integer ano;
     private Boolean isVendido;
@@ -16,6 +17,7 @@ public class VeiculoDTO {
     public VeiculoDTO(Veiculo veiculo) {
         this.id = veiculo.getId();
         this.marca = veiculo.getMarca().getNome();
+        this.sigla = veiculo.getMarca().getSigla();
         this.descricao = veiculo.getDescricao();
         this.ano = veiculo.getAno();
         this.isVendido = veiculo.isVendido();
