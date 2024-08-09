@@ -1,7 +1,7 @@
 # api-carros
 
 ## Para rodar
-`mvn spring-boot:run`
+`mvn compile -> mvn spring-boot:run`
 Ou rodar diretamente pela IDE
 
 ## Api documentada
